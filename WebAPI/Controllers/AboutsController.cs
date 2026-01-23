@@ -39,16 +39,16 @@ namespace OnlineEdu.WebAPI.Controllers
         [HttpPost]
         public IActionResult Create(CreateAboutDTO createAboutDto)
         {
-            var newValue = _mapper.Map<About>(createAboutDto);
-            _aboutService.TCreate(newValue);
+            var createdAbouts = _mapper.Map<About>(createAboutDto);
+            _aboutService.TCreate(createdAbouts);
             return Ok("Hakkımızda Alanı Oluşturuldu.");
         }
 
         [HttpPut]
         public IActionResult Update(UpdateAboutDto updateAboutDto)
         {
-            var updatedValue = _mapper.Map<About>(updateAboutDto);
-            _aboutService.TUpdate(updatedValue);
+            var updatedAbouts = _mapper.Map<About>(updateAboutDto);
+            _aboutService.TUpdate(updatedAbouts);
             return Ok("Hakkımızda Alanı Güncellendi.");
 
 
