@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# --- OnlineEdu Ozel Eklentiler ---
+
+# Hassas ayarlarý iceren yapýlandýrma dosyalari (User Secrets eklenecek)
+**/appsettings.json
+**/appsettings.Development.json
+
+# Eger veritabaný loglari olusuyorsa
+*.ldf
+*.mdf
