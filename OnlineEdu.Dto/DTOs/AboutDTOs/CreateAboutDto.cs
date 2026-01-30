@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineEdu.DTO.DTOs.AboutDTOs
 {
-    public class CreateAboutDTO
+    public class CreateAboutDto
     {
 
         public string Description { get; set; }

@@ -15,16 +15,16 @@ namespace OnlineEdu.WebAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var blogs = _blogService.TGetList();
-            return Ok(blogs);
+            var values = _blogService.TGetList();
+            return Ok(values);
         }
 
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var blogs = _blogService.TGetById(id);
-            return Ok(blogs);
+            var value = _blogService.TGetById(id);
+            return Ok(value);
         }
 
 

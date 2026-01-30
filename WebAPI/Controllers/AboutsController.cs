@@ -16,16 +16,16 @@ namespace OnlineEdu.WebAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var abouts = _aboutService.TGetList();
-            return Ok(abouts);
+            var values = _aboutService.TGetList();
+            return Ok(values);
         }
 
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var about = _aboutService.TGetById(id);
-            return Ok(about);
+            var value = _aboutService.TGetById(id);
+            return Ok(value);
         }
 
 
@@ -37,7 +37,7 @@ namespace OnlineEdu.WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CreateAboutDTO createAboutDto)
+        public IActionResult Create(CreateAboutDto createAboutDto)
         {
             var createdAbouts = _mapper.Map<About>(createAboutDto);
             _aboutService.TCreate(createdAbouts);

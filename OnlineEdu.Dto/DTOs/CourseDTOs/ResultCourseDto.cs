@@ -1,18 +1,20 @@
-﻿ using System;
+﻿using OnlineEdu.DTO.DTOs.CourseCategoryDTOs;
+using OnlineEdu.Entity.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineEdu.Entity.Entities
+namespace OnlineEdu.DTO.DTOs.CourseDTOs
 {
-    public class Course
+    public class ResultCourseDto
     {
         public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string ImageUrl { get; set; }
         public int CourseCategoryId { get; set; }
-        public CourseCategory CourseCategory { get; set; }
+        public ResultCourseCategoryDto CourseCategory { get; set; }
         public decimal Price { get; set; }
         public bool IsShown { get; set; }
     }
