@@ -23,6 +23,15 @@ namespace WebAPI
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
             });
+
+            builder.Services.AddCors(opt =>
+            {
+                opt.AddPolicy("OnlineEduCors", opts =>
+                {
+                    opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -38,6 +47,8 @@ namespace WebAPI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("OnlineEduCors");
 
             app.UseAuthorization();
 

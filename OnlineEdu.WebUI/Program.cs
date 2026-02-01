@@ -7,6 +7,7 @@ namespace OnlineEdu.WebUI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddHttpClient();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -26,10 +27,6 @@ namespace OnlineEdu.WebUI
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -37,6 +34,12 @@ namespace OnlineEdu.WebUI
                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
             });
+
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            
 
             app.Run();
         }

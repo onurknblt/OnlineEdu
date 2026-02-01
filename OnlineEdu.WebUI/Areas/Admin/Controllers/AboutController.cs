@@ -1,13 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using OnlineEdu.WebUI.DTOs.AboutDTOs;
+using OnlineEdu.WebUI.Helpers;
 
 namespace OnlineEdu.WebUI.Areas.Admin.Controllers
 {
     [Route("[area]/[controller]/[action]/{id?}")]
-    public class AboutController : Controller
+    [Area("Admin")]
+    public class AboutController: Controller
     {
+        private readonly HttpClient _client = HttpClientInstance.GetClient();
+
         public IActionResult Index()
         {
-            return View();
+            
+            var values = _client.GetFromJsonAsync<List<ResultAboutDto>>("abouts");
+            return View(values);
         }
     }
 }
